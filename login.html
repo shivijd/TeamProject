@@ -57,18 +57,17 @@ function validateForm(){
 	
 	var flag=false;
 	if(empNo==" "||empNo==null)
-	document.getElementById('employeeErrMsg').innerHTML=" * Please enter valid employee Number";
+	document.getElementById('employeeErrMsg') {alert("Please fill the EmployeeNumber");}
 	if(ename==""||ename==null){
 		document.getElementById('empErrMsg').innerHTML=" * Please enter EmployeeName.";
 		
 	}
 
-	else if(ename=="capgemini" && empNo=="123"){
+	else if(empNo=="123" && ename=="Shivi"  ){
 		flag=true;
 		document.getElementById('employeeErrMsg').innerHTML="";
 		document.getElementById('empErrMsg').innerHTML="";
-		
-		
+				
 		}
 	else{
 		flag=false;
@@ -96,13 +95,12 @@ box-shadow:5px 5px 5px 5px red;">
 
 <form name="myform" method="post">
 	<table>
-		<tr>
-			<th colspan="3" style="color:red;">Registration Form </th>
-		</tr>
+		<h3 align="center"> Personal Details</h3>
+		
                  <tr>
 			<td>EmployeeNo:</td>
 			<td>
-				<input type="text" name="EmployeeNo" size="20">
+				<input type="text" name="EmployeeNumber" size="20">
 			</td>
 			<td>
 				<div id="employeeErrMsg" class="errMessage"></div>
@@ -112,7 +110,7 @@ box-shadow:5px 5px 5px 5px red;">
 		<tr>
 			<td>EmployeeName:</td>
 			<td>
-				<input type="text" name="userName" size="20">
+				<input type="text" name="EmployeeNo" size="20">
 			</td>
 			<td>
 				<div id="empErrMsg" class="errMessage"></div>
