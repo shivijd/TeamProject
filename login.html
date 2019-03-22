@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<style type="text/css">
+h1{
+	color: red;
+}
+h2{
+	color:white;
+}
+#mainCnt{
+	margin: 0px;
+	margin-top:50px;
+	margin-left:200px;
+	width: 800px;
+	font-family:Calibri;
+}
+
+#footer{
+	background-color: black;
+	color:white;
+	font-weight: bold;
+	font-style:italic;
+	font-size:12px;
+	padding: 10px 10px 10px 10px;
+	border-top: 1px solid;
+	border-top-color: white;
+}
+
+
+
+.errMessage{
+	color:red;
+	font-weight: bold;
+	font-style: italic;
+	font-size: 14px;
+}
+h3{
+	color: black;
+}
+.btn{
+
+	padding: 5px 10px 5px 10px;
+	background-color: red;
+	color: white;
+	font-weight: bold;
+	font-size: 12px;
+}
+
+
+</style>
+<script type="text/javascript">
+function validateForm(){
+	var empNo=myform.EmployeeNo.value;
+	var ename=myform.EmployeeName.value;
+	
+	var flag=false;
+	if(empNo==" "||empNo==null)
+	document.getElementById('employeeErrMsg').innerHTML=" * Please enter valid employee Number";
+	if(ename==""||ename==null){
+		document.getElementById('empErrMsg').innerHTML=" * Please enter EmployeeName.";
+		
+	}
+
+	else if(ename=="capgemini" && empNo=="123"){
+		flag=true;
+		document.getElementById('employeeErrMsg').innerHTML="";
+		document.getElementById('empErrMsg').innerHTML="";
+		
+		
+		}
+	else{
+		flag=false;
+		document.getElementById('employeeErrMsg').innerHTML="";
+		document.getElementById('empErrMsg').innerHTML="";
+		alert('Invalid login! Please try again!');
+	}
+	
+	if(flag)
+		window.location.href = "project.html";
+	
+	return flag;
+}
+</script>
+
+</head>
+<body id="mainCnt" >
+<div style=" border-radius: 15px;  
+padding: 20px; 
+width: 400px;     
+box-shadow:5px 5px 5px 5px red;">
+<div >
+<h1 align="center"> Employee Registration Form </h1>
+<hr>
+
+<form name="myform" method="post">
+	<table>
+		<tr>
+			<th colspan="3" style="color:red;">Registration Form </th>
+		</tr>
+                 <tr>
+			<td>EmployeeNo:</td>
+			<td>
+				<input type="text" name="EmployeeNo" size="20">
+			</td>
+			<td>
+				<div id="employeeErrMsg" class="errMessage"></div>
+			</td>
+		
+		</tr>
+		<tr>
+			<td>EmployeeName:</td>
+			<td>
+				<input type="text" name="userName" size="20">
+			</td>
+			<td>
+				<div id="empErrMsg" class="errMessage"></div>
+			</td>
+		</tr>
+          	<tr>
+			<td>City:</td>
+			<td>
+	
+	        	<select id="City">
+      			<option>Please select</option>
+      			<option>Lucknow</option>
+      			<option>Jhansi</option>
+      			<option>Pune</option>
+    			</select>
+   			</td>
+			<td>
+				 <div id="results"></div>
+                        </td>
+		</tr>
+			<tr>
+			<td>State:</td>
+			<td>
+	
+	        	<select id="State">
+      			<option>Please select</option>
+      			<option>UttaPradesh</option>
+      			<option>MadhyaPradesh</option>
+      			<option>Maharashtra</option>
+    			</select>
+   			</td>
+			<td>
+				 <div id="result"></div>
+                        </td>
+		</tr>
+			
+		<tr>
+			<td></td>
+			<td>
+				<input type="button" class="btn" value="Next" onclick="validateForm()">
+			</td>
+			
+		</tr>
+		
+	</table>
+
+
+</form>
+
+
+</div>
+</body>
+</html>
