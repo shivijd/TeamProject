@@ -1,161 +1,92 @@
 <!DOCTYPE html>
 <html>
 <head>
-
-<style type="text/css">
-h1{
-	color: red;
-}
-h2{
-	color:white;
-}
-#mainCnt{
-	margin: 0px;
-	margin-top:50px;
-	margin-left:200px;
-	width: 800px;
-	font-family:Calibri;
-}
-
-#footer{
-	background-color: black;
-	color:white;
-	font-weight: bold;
-	font-style:italic;
-	font-size:12px;
-	padding: 10px 10px 10px 10px;
-	border-top: 1px solid;
-	border-top-color: white;
-}
-
-
-
-.errMessage{
-	color:red;
-	font-weight: bold;
-	font-style: italic;
-	font-size: 14px;
-}
-h3{
-	color: black;
-}
-.btn{
-
-	padding: 5px 10px 5px 10px;
-	background-color: red;
-	color: white;
-	font-weight: bold;
-	font-size: 12px;
-}
-
-
-</style>
-<script type="text/javascript">
-function validateForm(){
-	var empNo=myform.EmployeeNo.value;
-	var ename=myform.EmployeeName.value;
+	<title> Login Page</title>
 	
-	var flag=false;
-	if(empNo==" "||empNo==null)
-	document.getElementById('employeeErrMsg') {alert("Please fill the EmployeeNumber");}
-	if(ename==""||ename==null){
-		document.getElementById('empErrMsg').innerHTML=" * Please enter EmployeeName.";
-		
-	}
+	<script>
+	
+		function validateDetails()
+		{
+			var employeeID=document.getElementById("employeeID");
+			var name=document.getElementById("name");
+			var city=document.getElementById("city");
+			var state=document.getElementById("state");
+			
+			var flag=true;
+			
+			if(employeeID.value=="" || name.value=="")
+			{
+			  window.alert("Please enter Employee id");
+			  employeeId.focus();
+			  flag=false;
+			}
+			
+			else  if(name.value=="")
+			{
+			  window.alert("Please enter Employee Name"); 
+			  name.focus();  
+			  flag=false;
+			}
+			
+			else if(city.value=="")
+			{
+			  window.alert("Please enter Employee's City"); 
+			  city.focus();  
+			  flag=false;
+			}
+			
+			else if(state.value=="")
+			{
+			  window.alert("Please enter Employee's State"); 
+			  state.focus();  
+			  flag=false;
+			}
+			
+			else
+			{
+				window.location="project.html";
+			}
 
-	else if(empNo=="123" && ename=="Shivi"  ){
-		flag=true;
-		document.getElementById('employeeErrMsg').innerHTML="";
-		document.getElementById('empErrMsg').innerHTML="";
-				
+	
 		}
-	else{
-		flag=false;
-		document.getElementById('employeeErrMsg').innerHTML="";
-		document.getElementById('empErrMsg').innerHTML="";
-		alert('Invalid login! Please try again!');
-	}
+		
+		
+		
 	
-	if(flag)
-		window.location.href = "project.html";
-	
-	return flag;
-}
-</script>
-
+	</script>
 </head>
-<body id="mainCnt" >
-<div style=" border-radius: 15px;  
-padding: 20px; 
-width: 400px;     
-box-shadow:5px 5px 5px 5px red;">
-<div >
-<h1 align="center"> Employee Registration Form </h1>
-<hr>
 
-<form name="myform" method="post">
-	<table>
-		<h3 align="center"> Personal Details</h3>
-		
-                 <tr>
-			<td>EmployeeNo:</td>
-			<td>
-				<input type="text" name="EmployeeNumber" size="20">
-			</td>
-			<td>
-				<div id="employeeErrMsg" class="errMessage"></div>
-			</td>
-		
-		</tr>
-		<tr>
-			<td>EmployeeName:</td>
-			<td>
-				<input type="text" name="EmployeeNo" size="20">
-			</td>
-			<td>
-				<div id="empErrMsg" class="errMessage"></div>
-			</td>
-		</tr>
-          	<tr>
-			<td>City:</td>
-			<td>
+<body >
+<center>
+<form name="employeeDetails" id="employeeDetails"  method="post">
+<table >
+	<tr>
+		<th>Enter Employee ID: </th>
+		<th> <input type="text" id="employeeID"></th>
+	</tr>
+	<tr>
+		<th>Enter Employee Name:</th>
+		<th><input type="text" id="name"></th>
+	</tr>
+	<tr>	
+		<th>Enter City:</th>
+		<th><input type="text" id="city"></th>
+	</tr>
+	<tr>
+		<th>Enter State:</th>
+		<th><input type="text" id="state"></th>
+	</tr>
 	
-	        	<select id="City">
-      			<option>Please select</option>
-      			<option>Lucknow</option>
-      			<option>Jhansi</option>
-      			<option>Pune</option>
-    			</select>
-   			</td>
-			<td>
-				 <div id="results"></div>
-                        </td>
-		</tr>
-			<tr>
-			<td>State:</td>
-			<td>
+	<tr>
+		<th><input type="button" value="submit" submit" onclick="validateDetails()"></th>
+		<th><input type="reset" id="reset"></th>
+	</tr>
 	
-	        	<select id="State">
-      			<option>Please select</option>
-      			<option>UttaPradesh</option>
-      			<option>MadhyaPradesh</option>
-      			<option>Maharashtra</option>
-    			</select>
-   			</td>
-			<td>
-				 <div id="result"></div>
-                        </td>
-		</tr>
-			
-		<tr>
-			<td></td>
-			<td>
-				<input type="button" class="btn" value="Next" onclick="validateForm()">
-			</td>
-			
-		</tr>
-		
-	</table>
+</table>
+</form>
+</center>
+</body>
+</html>
 
 
 </form>
